@@ -1,23 +1,28 @@
 import React from 'react'
-import {Outlet,Link } from 'react-router-dom';
-import './Layout.css'
+import "./Layout.css";
+import {Outlet,Link} from "react-router-dom";
 
 export default function Layout() {
   return (
-    <div class="nav">
+    <div>
         <nav>
-            <ul>
-                
+            <ul className="nav-bar">
                 <li>
-                    <Link to="/">Home</Link>
-                </li>
+                    <Link className="nav-link" to="/"><b>Home</b></Link></li>
                 <li>
-                    <Link to="/about">About</Link>
-                </li>
+                    <Link className="nav-link" to="/about"><b>About</b></Link></li>
                 <li>
-                    <Link to="/contact">Contact</Link>
-                </li>
-                
+                    <Link className="nav-link" to="/contact"><b>Contact</b></Link></li>
+                <li>
+                    <Link className="nav-link" to="/service"><b>Service</b></Link></li>
+                <li>
+                    <Link className="nav-link" to="/counter"><b>Counter</b></Link></li>
+                <li>
+                    <Link className="nav-link" to="/effect"><b>Effect</b></Link></li>
+                <li>
+                    <Link className="nav-link" to="/reducer"><b>Reducer</b></Link></li>
+                <li>
+                    <Link className="nav-link" to="/callback"><b>Callback</b></Link></li>
             </ul>
         </nav>
         <Outlet/>

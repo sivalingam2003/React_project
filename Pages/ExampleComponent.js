@@ -1,21 +1,30 @@
-function ExampleComponent() {
-    const [data, setData]= useState(null);
-    useEffect(()=>{
-        fetch('https://jsonplaceholder.typecode.com/todos/1')
-        .then(response=> response.json())
-        .then(result=> setData(result));
-        return ()=>{
+import React from 'react'
+import { useState,useEffect } from 'react'
+//import { json } from 'react-router-dom';
+
+//export default function Effect() {
+
+function ExampleComponent(){
+    const[ data, setData] = useState(null);
+    useEffect(() => {
+            fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(Response => Response.json())
+            .then(result => setData(result));
+
+   return() =>{   
         };
-    },[]);
-    return(
+          },[]);
+return(
         <div>
-            {
-                data?(
-                    <p>Data:{350N.stringsi(data)}</p>
-                ):(
-                    <p>Loading...</p>
-                )
-            }
+            {data ? (
+            <p> Data: { JSON.stringify(data)}</p>
+            ):(
+                <p>Loading...</p>
+
+            )}
+
         </div>
-    );
+  );
 }
+
+export default ExampleComponent;

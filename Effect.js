@@ -1,17 +1,30 @@
 import React from 'react'
-import {useState , useEffect} from "react"
-export default function Effect() {
-    const [data, setData]=useState(null)
-    useEffect(() =>{
+import { useState,useEffect } from 'react'
+//import { json } from 'react-router-dom';
 
-    })
-  return (
-    <div>
-        {data ?(
-            <p>Data:</p>       
+//export default function Effect() {
+
+function ExampleComponent(){
+    const[ data, setData] = useState(null);
+    useEffect(() => {
+            fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(Response => Response.json())
+            .then(result => setData(result));
+
+   return() =>{   
+        };
+          },[]);
+return(
+        <div>
+            {data ? (
+            <p> Data: { JSON.stringify(data)}</p>
             ):(
-                <p>Loading....</p>
+                <p>Loading...</p>
+
             )}
-    </div>
-  )
+
+        </div>
+  );
 }
+
+export default ExampleComponent;
